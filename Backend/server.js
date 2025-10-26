@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 mongoose
   .connect(
-    "your-connection-string",
+    "mongodb://127.0.0.1:27017/MyrosplDB",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log("MongoDB connected"))
