@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMbuflow Blog</title>
+  <link rel="shortcut icon" href="ambulance.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #2575fc, #ffffff);
+      color: #003366;
+    }
+
+    /* Navbar */
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .brand-name {
+      display: flex;
+    }
+
+    .brand-name .letter {
+      font-size: 28px;
+      font-weight: bold;
+      color: #003366;
+    }
+
+    .brand-name .red {
+      color: #e81a1a;
+    }
+
+    .menu ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu ul li a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: 500;
+    }
+
+    .menu ul li a:hover {
+      color: #e81a1a;
+    }
+
+    header h1 {
+      text-align: center;
+      margin: 30px 0 10px 0;
+      font-size: 36px;
+    }
+
+    header p {
+      text-align: center;
+      margin: 0 0 40px 0;
+      font-size: 16px;
+    }
+
+    /* Blog Cards */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 0 20px 50px 20px;
+    }
+
+    .blog-card {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .blog-card .content {
+      padding: 20px;
+    }
+
+    .blog-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .blog-card p {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .blog-card a {
+      color: #2575fc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .blog-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #C4D7FF;
+      color: #003366;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
+
+    footer h3 {
+      color: #2980b9;
+    }
+
+    footer a {
+      color: #003366;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+      justify-content: space-between;
+    }
+
+    footer .footer-item {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    footer .social-icons a {
+      font-size: 24px;
+      margin-right: 10px;
+      color: #003366;
+    }
+
+    footer .social-icons a:hover {
+      color: #e81a1a;
+    }
+
+    .menu-links {
+    display: flex;
+    justify-content: center; /* center all links */
+    align-items: center;
+    background-color: white; /* white background for all links together */
+    padding: 10px 30px;
+    border-radius: 50px; /* pill-shaped/circular edges */
+    list-style: none;
+    margin: 0 auto;
+    max-width: fit-content;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.menu-links li {
+    margin: 0 15px;
+}
+
+.menu-links li a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.menu-links li a:hover {
+    color: #e81a1a;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+}
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 28px;
+      }
+      .menu ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+<div class="container" id="container">
+    <div class="logo">
+        <div class="brand-name">
+            <span class="letter red">A</span>
+            <span class="letter red">m</span>
+            <span class="letter red">b</span>
+            <span class="letter red">u</span>
+            <span class="letter">F</span>
+            <span class="letter">l</span>
+            <span class="letter">o</span>
+            <span class="letter">w</span>
+        </div>
+        <img src="images/logo2-w.webp" alt="Ambulance Monitoring System Logo" style="width: 80px; height: auto" />
+    </div>
+
+    <nav class="menu">
+        <ul class="menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Feedback.html">Feedback</a></li>
+            <li><a href="nearby.html">Nearby</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+</div>
+
+  <!-- Blog Header -->
+  <header>
+    <h1>Blogs</h1>
+    <p>Latest updates and insights on ambulance management and emergency response</p>
+  </header>
+
+  <!-- Blog Cards -->
+  <div class="blog-grid">
+    <div class="blog-card">
+      <img src="https://c8.alamy.com/comp/2M84EAH/file-photo-dated-221222-of-ambulances-outside-waterloo-ambulance-station-south-london-ambulance-response-times-and-ae-waits-are-the-worst-on-record-though-the-number-of-people-on-the-nhs-waiting-list-has-fallen-slightly-new-figures-show-the-data-from-nhs-england-shows-the-average-response-time-in-december-for-ambulances-dealing-with-the-most-urgent-incidents-defined-as-calls-from-people-with-life-threatening-illnesses-or-injuries-was-10-minutes-and-57-seconds-issue-date-thursday-january-12-2023-2M84EAH.jpg" alt="Blog 1">
+      <div class="content">
+        <h3>Improving Ambulance Response Time</h3>
+        <p>Learn how AMbuflow optimizes routes and reduces response times for emergencies.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoWVqfgEA2h_ov6E3AIAk_Me-ixCMkE5qZvg&s" alt="Blog 2">
+      <div class="content">
+        <h3>Top Features of AMbuflow</h3>
+        <p>Discover the key features that make AMbuflow efficient for hospitals and ambulance services.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+    <div class="blog-card">
+      <img src="https://thumbs.dreamstime.com/b/happy-ambulance-doctors-working-team-standing-front-car-119779620.jpg" alt="Blog 3">
+      <div class="content">
+        <h3>Success Stories</h3>
+        <p>Real-life examples of how AMbuflow has helped save lives in critical situations.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-item">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="sitemap.html">Site Map</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-item">
+        <h3>Contact Info</h3>
+        <p>123 Emergency Lane, Mumbai, India</p>
+        <p>Email: <a href="mailto:emergency@ambulanceservice.in">emergency@ambulanceservice.in</a></p>
+        <p>Phone: <a href="tel:+91-911-1234567">+91-911-1234567</a></p>
+      </div>
+
+      <div class="footer-item">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-item">
+        <h3>Subscribe to Our Newsletter</h3>
+        <form id="newsletter-form" action="#">
+          <input type="email" placeholder="Your Email" required style="padding:8px; width:80%; border-radius:5px; border:none;">
+          <br><br>
+          <button type="submit" style="background-color:#e81a1a;color:white;padding:8px 15px;border:none; border-radius:5px; cursor:pointer;">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
+
+
+
+
+

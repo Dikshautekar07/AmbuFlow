@@ -108,8 +108,7 @@
                 return false; // Prevent form submission since we are handling the redirect
             };
           </script>
-        <form action="#" class="sign-up-form"
-          style="background-color: #fff; padding: 20px;">
+        <form action="#" class="sign-up-form" style="background-color: #fff; padding: 20px;" onsubmit="return validateSignUpForm()">
           <h2 class="title">Sign up</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
@@ -117,7 +116,9 @@
           </div>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" />
+            <input type="email" id="signup-email" placeholder="Email" />
+          </div>
+          <div id="email-error" style="color: red; font-size: 14px; display: none; margin-bottom: 10px;"></div>
           </div>
           <div class="input-field">
 
@@ -157,6 +158,26 @@
         </form>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
+        <script>
+          function validateSignUpForm() {
+            const emailInput = document.getElementById('signup-email');
+            const emailError = document.getElementById('email-error');
+            const emailValue = emailInput.value.trim();
+            // Simple email regex for validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailValue)) {
+              emailError.textContent = 'Please enter a valid email address.';
+              emailError.style.display = 'block';
+              emailInput.focus();
+              return false;
+            } else {
+              emailError.textContent = '';
+              emailError.style.display = 'none';
+            }
+            // You can add other validations here if needed
+            return true;
+          }
+        </script>
         <script>
           let passwordSignup = document.getElementById("password-input-signup");
           let strengthBarSignup = document.getElementById("strength-bar-signup");
